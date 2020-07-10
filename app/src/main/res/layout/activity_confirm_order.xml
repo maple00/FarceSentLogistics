@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="SmallSp,RelativeOverlap">
+
+    <include layout="@layout/include_title_bar" />
+
+    <com.rainwood.tkrefreshlayout.views.RWNestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorLine">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shape_place_order_gradient_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_timer" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/text_preTime_get_goods"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今天 13:00"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/shape_tips_order_bg"
+                        android:paddingStart="5dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="4dp"
+                        android:text="@string/text_current_day"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_token_order_card_bg"
+                    android:paddingStart="15dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="20dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_address"
+                        android:layout_width="17dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_temp_address" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_ship_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:layout_toEndOf="@+id/iv_address"
+                        android:text="重庆市南岸区江南大道8号"
+                        android:textColor="@color/fontColor"
+                        android:textSize="15sp" />
+
+                    <com.rainwood.sentlogistics.ui.widget.GroupIconText
+                        android:id="@+id/git_ship_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_ship_address"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toEndOf="@+id/iv_address"
+                        app:icon="@drawable/ic_default_head"
+                        app:spacing="5"
+                        app:text="韩梅梅" />
+
+                    <com.rainwood.sentlogistics.ui.widget.GroupIconText
+                        android:id="@+id/git_ship_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_ship_address"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toEndOf="@+id/git_ship_name"
+                        app:icon="@drawable/ic_tel"
+                        app:spacing="5"
+                        app:text="18723559145" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </FrameLayout>
+    </com.rainwood.tkrefreshlayout.views.RWNestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_settlement_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="总价￥100，预付起步价:￥5"
+            android:textColor="@color/labelColor"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_doubt"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_below="@+id/tv_settlement_price"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/ic_doubt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_settlement_price"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@+id/iv_doubt"
+            android:text="@string/text_price_rule"
+            android:textColor="@color/blue05"
+            android:textSize="11sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_take_order_now"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="30dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="16dp"
+            android:text="@string/text_take_order_now" />
+    </RelativeLayout>
+
+</LinearLayout>

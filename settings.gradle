@@ -1,0 +1,4 @@
+rootProject.name='FarceSentLogistics'
+include ':app','tools','bannerLibrary','refreshlibrary'
+include ':citynavigation'
+include ':imageselector'

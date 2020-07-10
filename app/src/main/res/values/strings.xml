@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">睿睿派</string>
+
+    <string name="common_month">月</string>
+    <string name="common_day">日</string>
+    <string name="common_hour">时</string>
+    <string name="common_minute">分</string>
+    <string name="common_second">秒</string>
+    <string name="time_title">请选择时间</string>
+    <string name="common_confirm">确定</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_permission_hint">请先授予权限</string>
+    <string name="common_permission_fail">授权失败，请手动授予权限</string>
+    <string name="common_loading">拼命加载中</string>
+    <string name="common_net_error">网络出错，请点击重试</string>
+    <string name="common_clear">清空</string>
+
+    <string name="frame_name" translatable="true">AndroidOHP</string>
+    <string name="text_message_notice">消息公告</string>
+    <string name="text_recommended_prize">推荐有奖</string>
+    <string name="text_mine_wallet">我的钱包</string>
+    <string name="text_common_route">常用路线</string>
+    <string name="text_2_setting">前往设置</string>
+    <string name="common_text_clear_screen">清空筛选</string>
+
+    <!-- 个人中心-->
+    <string name="text_token_order">下单</string>
+    <string name="text_mine_order">我的订单</string>
+    <string name="text_store_transport">门店运输情况</string>
+    <string name="text_mine_share">我的分享</string>
+    <string name="text_call_center">客服中心</string>
+    <string name="text_feedback">意见反馈</string>
+    <string name="text_more_setting">更多设置</string>
+    <string name="text_search">搜索</string>
+    <string name="text_city_search_tips">输入城市名或拼音</string>
+    <string name="text_nick">昵称</string>
+    <string name="text_head_photo">头像</string>
+    <string name="text_write_input">请填写</string>
+    <string name="text_tel_number">手机号</string>
+    <string name="text_sign">签名</string>
+    <string name="text_introduce_self">用一句话介绍自己</string>
+    <string name="text_mine_location">我的位置</string>
+    <string name="text_location">定位中</string>
+    <string name="text_click_plus_address">点击添加收货地址</string>
+    <string name="text_history_address">历史发货地</string>
+    <string name="text_take_info">收货人信息</string>
+    <string name="text_take_address">收货地址</string>
+    <string name="text_floor_door_number">楼层及门牌号</string>
+    <string name="text_contact">联系人</string>
+    <string name="text_input_contact_name">请填写联系人姓名</string>
+    <string name="text_input_tel_number">请填写手机号</string>
+    <string name="text_confirm_choose_point">确认选点</string>
+    <string name="text_take_goods_time">取货时间</string>
+    <string name="text_choose_please">请选择</string>
+    <string name="text_publish_type">发布类型</string>
+    <string name="text_goods_info">货物信息</string>
+    <string name="text_to_write">去填写</string>
+    <string name="text_transport_aging">运输时效</string>
+    <string name="text_current_day">当日达</string>
+    <string name="text_next_day">次日达</string>
+    <string name="text_note">备注</string>
+    <string name="text_note_tips">捎话给司机</string>
+    <string name="text_commit_order">提交订单</string>
+    <string name="text_plus_goods">添加货物</string>
+    <string name="text_desc_other_demand">请描述您的其他需求</string>
+    <string name="text_save">保存</string>
+    <string name="text_estimated_volume">预估体积</string>
+    <string name="text_length">长</string>
+    <string name="text_unit_cm">cm</string>
+    <string name="text_width">宽</string>
+    <string name="text_height">高</string>
+    <string name="text_goods_type">货物类型</string>
+    <string name="text_goods_num">货物数量</string>
+    <string name="text_reduce_line">一</string>
+    <string name="text_plus_line">＋</string>
+    <string name="text_safe_price">保价</string>
+    <string name="text_safe_price_rule">保价规则</string>
+    <string name="text_take_order_now">立即下单</string>
+    <string name="text_price_rule">计价规则</string>
+    <string name="text_preTime_get_goods">预约取货时间</string>
+
+</resources>

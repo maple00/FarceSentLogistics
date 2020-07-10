@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_page_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:paddingStart="13dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="10dp"
+    tools:ignore="ContentDescription,UseCompoundDrawables">
+
+    <ImageView
+        android:id="@+id/iv_page_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:src="@drawable/ic_page_back" />
+
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_choose_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重庆"
+            android:textColor="@color/fontColor"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_down_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_down_arrow" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/ll_address"
+        android:layout_toEndOf="@+id/iv_page_back"
+        android:background="@drawable/shape_search_view"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_search" />
+
+        <com.rainwood.tools.wheel.view.ClearEditText
+            android:id="@+id/tv_search_content"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="start"
+            android:focusableInTouchMode="true"
+            android:hint="搜索发货地址"
+            android:textColor="@color/fontColor"
+            android:textSize="16sp"
+            android:singleLine="true" />
+
+        <View style="@style/VerticalLineStyle" />
+
+        <com.rainwood.sentlogistics.ui.widget.LoadingView
+            android:id="@+id/lv_search_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.HomeActivity"
+    tools:ignore="ContentDescription">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/dl_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_home_title" />
+
+            <cn.rawinwood.bgabanner.BGABanner
+                android:id="@+id/banner_home_top"
+                style="@style/BannerDefaultStyle"
+                android:layout_height="125dp"
+                app:banner_indicatorGravity="bottom|right"
+                app:banner_transitionEffect="stack" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@color/white"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/iv_notice"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/img_notice" />
+
+                <View
+                    style="@style/VerticalLineStyle"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@+id/iv_notice" />
+
+                <TextView
+                    android:id="@+id/tv_tips_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/iv_notice"
+                    android:text="疫情防护指南"
+                    android:textColor="@color/fontColor"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tips_title"
+                    android:layout_marginTop="11dp"
+                    android:layout_toEndOf="@+id/iv_notice"
+                    android:clickable="true"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="-1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="疫情期间请用蓝牙打卡，不摘口罩，避免接触勤洗手换疫情期间请用蓝牙打卡，不摘口罩，避免接触勤洗手换..."
+                    android:textColor="@color/middleColor"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- 高德地图-->
+                <com.amap.api.maps.MapView
+                    android:id="@+id/mv_goods_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/tv_token_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="35dp"
+                    android:background="@drawable/shape_place_order_bg"
+                    android:paddingStart="50dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="50dp"
+                    android:paddingBottom="18dp"
+                    android:text="我要下单"
+                    android:textColor="@color/white" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- 滑动菜单数据-->
+        <fragment
+            android:id="@+id/choose_mine_fragment"
+            android:name="com.rainwood.sentlogistics.ui.fragment.PersonalFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</FrameLayout>

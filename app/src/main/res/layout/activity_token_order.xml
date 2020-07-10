@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_parent_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription,SmallSp,UselessParent,RelativeOverlap,RtlSymmetry">
+
+    <include layout="@layout/include_title_bar" />
+
+    <View style="@style/HorizontalLineStyle" />
+
+    <!-- 高德地图、仅仅用于定位当前位置-->
+    <com.amap.api.maps.MapView
+        android:id="@+id/mv_goods_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <com.rainwood.tools.wheel.widget.HintLayout
+        android:id="@+id/hl_status_hint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.rainwood.tkrefreshlayout.views.RWNestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="afterDescendants"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!-- 选择地址-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/shape_token_order_card_bg"
+                    android:orientation="vertical">
+                    <!-- 当前位置-->
+                    <include layout="@layout/include_current_address" />
+                    <!-- 收货地址-->
+                    <com.rainwood.sentlogistics.ui.widget.MeasureGridView
+                        android:id="@+id/mgv_shipping_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none" />
+
+                    <View style="@style/HorizontalLineStyle" />
+
+                    <!-- 添加收货路线、选择常用路线-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.rainwood.sentlogistics.ui.widget.GroupIconText
+                            android:id="@+id/git_plus_shipping_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            app:icon="@drawable/ic_plus"
+                            app:text="添加收货地址"
+                            app:textColor="@color/fontColor" />
+
+                        <View style="@style/VerticalLineStyle" />
+
+                        <com.rainwood.sentlogistics.ui.widget.GroupIconText
+                            android:id="@+id/git_common_route"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            app:icon="@drawable/ic_plus"
+                            app:text="选择常用路线"
+                            app:textColor="@color/fontColor" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_token_order_card_bg"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_take_goods"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_take_goods" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="6dp"
+                            android:layout_toEndOf="@+id/iv_take_goods"
+                            android:text="@string/text_take_info"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_contact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_contact"
+                            android:textColor="@color/middleColor"
+                            android:textSize="15sp" />
+
+                        <com.rainwood.tools.wheel.view.ClearEditText
+                            android:id="@+id/et_delivery_name"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/tv_contact"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="end"
+                            android:hint="@string/text_input_contact_name" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_tel_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_tel_number"
+                            android:textColor="@color/middleColor"
+                            android:textSize="15sp" />
+
+                        <com.rainwood.tools.wheel.view.ClearEditText
+                            android:id="@+id/et_delivery_tel"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/tv_tel_number"
+                            android:gravity="end"
+                            android:hint="@string/text_input_tel_number"
+                            android:inputType="phone"
+                            app:regexType="mobile" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_token_order_card_bg"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_take_goods_time"
+                            android:textColor="@color/middleColor"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_right_arrow" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_take_goods_time"
+                            style="@style/EditTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/iv_arrow"
+                            android:hint="@string/text_choose_please" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_transport_aging"
+                            android:textColor="@color/middleColor"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_next_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:paddingStart="6dp"
+                            android:text="@string/text_next_day"
+                            android:textColor="@color/fontColor"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/cb_next_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tv_next_day"
+                            android:background="@null"
+                            android:button="@drawable/selector_checkbox"
+                            android:checked="false" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_current_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:layout_toStartOf="@+id/cb_next_day"
+                            android:text="@string/text_current_day" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/cb_current_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tv_current_day"
+                            android:background="@null"
+                            android:button="@drawable/selector_checkbox"
+                            android:checked="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_publish_type"
+                            android:textColor="@color/middleColor"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_arrow1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_right_arrow" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_publish_type"
+                            style="@style/EditTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/iv_arrow1"
+                            android:hint="@string/text_choose_please" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_goods_info_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_goods_info"
+                            android:textColor="@color/middleColor"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_arrow2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_right_arrow" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_goods_list"
+                            style="@style/EditTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/iv_arrow2"
+                            android:hint="@string/text_to_write" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_token_order_card_bg"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_msg_note"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_msg_note" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="6dp"
+                            android:layout_toEndOf="@+id/iv_msg_note"
+                            android:text="@string/text_note"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_word_limit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="0/50"
+                            android:textColor="@color/middleColor"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <com.rainwood.tools.wheel.view.ClearEditText
+                        android:id="@+id/et_order_note"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|top"
+                        android:hint="@string/text_note_tips"
+                        android:minLines="3"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_commit_order"
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15sp"
+                    android:background="@drawable/shape_button_gradient_bg"
+                    android:text="@string/text_commit_order" />
+
+            </LinearLayout>
+
+        </com.rainwood.tkrefreshlayout.views.RWNestedScrollView>
+
+    </com.rainwood.tools.wheel.widget.HintLayout>
+
+</LinearLayout>

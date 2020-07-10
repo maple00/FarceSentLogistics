@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <include layout="@layout/include_title_bar"/>
+
+    <View style="@style/HorizontalLineStyle"/>
+
+    <com.rainwood.sentlogistics.ui.widget.GlueTabLayout
+        android:id="@+id/gtl_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/fontColor"
+        app:tabTextColor="@color/fontColor"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_bulletin_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"/>
+
+</LinearLayout>

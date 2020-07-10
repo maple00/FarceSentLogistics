@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_search_screen_view" />
+
+    <View style="@style/HorizontalLineStyle" />
+
+
+    <!-- 高德地图、用于搜索地址-->
+    <com.amap.api.maps.MapView
+        android:id="@+id/mv_goods_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <com.rainwood.tools.wheel.widget.SettingBar
+        android:id="@+id/fl_choose_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        app:bar_leftColor="@color/middleColor"
+        app:bar_leftIcon="@drawable/ic_choose_address"
+        app:bar_leftText="在地图上选址"
+        app:bar_rightIcon="@drawable/ic_right_arrow" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/assistColor10" />
+
+    <TextView
+        android:id="@+id/tv_address_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/text_history_address"
+        android:textColor="@color/labelColor"
+        android:textSize="13sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_address_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.rainwood.tools.com.rainwood.sentlogistics.ui.dialog.UIDialog"
+    tools:ignore="ContentDescription">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_main_depart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/dialog_ui_round_size"
+        app:cardElevation="0px">
+
+        <LinearLayout
+            android:id="@+id/ll_ui_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <com.rainwood.tools.wheel.view.SmartTextView
+                android:id="@+id/tv_ui_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/fontColor"
+                android:textSize="16sp"
+                tools:text="标题" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorLine" />
+            <!-- 确认取消-->
+            <LinearLayout
+                android:id="@+id/ll_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.rainwood.tools.wheel.view.SmartTextView
+                    android:id="@+id/tv_ui_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_transparent"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/v_ui_line"
+                    android:layout_width="@dimen/line_size"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_ui_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_transparent"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/common_text_confirm"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/iv_dialog_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/cv_main_depart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_cancel" />
+
+</RelativeLayout>

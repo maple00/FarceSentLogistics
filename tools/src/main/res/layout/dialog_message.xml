@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_message_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:lineSpacingExtra="8dp"
+    android:textColor="@color/middleColor"
+    android:textSize="14sp"
+    tools:context="com.rainwood.tools.com.rainwood.sentlogistics.ui.dialog.MessageDialog"
+    tools:text="内容" />

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FD6A29</color>
+    <color name="colorPrimaryDark">#FD6A29</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="windowBackground">#F4F4F4</color>
+
+    <color name="assistColor10">#F9F9F9</color>
+
+    <!-- 次级文字颜色-->
+    <color name="middleColor">#666666</color>
+    <color name="labelColor">#999999</color>
+    <color name="labelColor2">#CCCCCC</color>
+    <!-- 分割线的颜色 -->
+    <color name="colorLine">#F0F0F0</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="colorButtonDisable">#AAAAAA</color>
+    <!-- 灰色-->
+    <color name="gray05">#F5F7FA</color>
+    <color name="gray10">#F5F5F5</color>
+    <color name="gray15">#DEDEE0</color>
+    <color name="gray20">#F2F2F2</color>
+
+    <!-- 蓝色-->
+    <color name="blue05">#4575AA</color>
+    <color name="blue10">#5E9EFF</color>
+    <!-- 红色-->
+    <color name="red05">#FF6262</color>
+
+    <color name="colorTabSelected">#ffffff</color>
+    <color name="colorTabNormal">#aaffffff</color>
+    <color name="colorTmall">#D0021B</color>
+    <color name="colorPageBg">#EFEEEE</color>
+    <color name="colorEEEEEE">#EFEEEE</color>
+
+</resources>

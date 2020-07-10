@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rainwood.sentlogistics">
+
+    <!-- 网络访问权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- wifi访问权限-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 获取安装包大小权限-->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <!-- 网络权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 读取手机权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读写权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+        <activity android:name=".ui.activity.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.amap.api.location.APSService" />
+        <!-- 高德地图 key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="1029390d17c61cb21718f29ea0cd9f8f" />
+
+        <!-- 公共列表页面 CommonListActivity-->
+        <activity
+            android:name=".ui.activity.CommonListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 详情页面 PageDetailActivity-->
+        <activity
+            android:name=".ui.activity.PageBrowserActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 城市列表 CityActivity-->
+        <activity
+            android:name=".ui.activity.CityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 推荐有奖 RecommendActivity-->
+        <activity
+            android:name=".ui.activity.RecommendActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 个人信息 PersonalDataActivity-->
+        <activity
+            android:name=".ui.activity.PersonalDataActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 消息公告 MsgBulletinActivity-->
+        <activity
+            android:name=".ui.activity.MsgBulletinActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 下单 TokenOrderActivity-->
+        <activity
+            android:name=".ui.activity.TokenOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateVisible|adjustPan"
+            android:screenOrientation="unspecified" />
+
+        <!-- 地址搜索 AddressSearchAty-->
+        <activity
+            android:name=".ui.activity.AddressSearchAty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 地图选址 AddressMapActivity-->
+        <activity
+            android:name=".ui.activity.AddressMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateVisible|adjustPan"
+            android:screenOrientation="unspecified" />
+
+        <!-- 填写货物信息  GoodsDataActivity-->
+        <activity
+            android:name=".ui.activity.GoodsDataActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateVisible|adjustPan"
+            android:screenOrientation="unspecified" />
+
+        <!-- 收货地址 DeliveryAddressAty-->
+        <activity
+            android:name=".ui.activity.DeliveryAddressAty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+        <!-- 确认订单 ConfirmOrderAty-->
+        <activity
+            android:name=".ui.activity.ConfirmOrderAty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified" />
+
+    </application>
+
+</manifest>
